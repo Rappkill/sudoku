@@ -1,0 +1,88 @@
+.main {
+  width: auto;
+  height: auto;
+    color: rgb(166, 24, 24);
+    display: grid;
+    grid-template-columns: 200px;
+    
+  }
+
+.grid-container {
+    width: 160px;
+    height: 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: yellow solid 2px;
+    margin: 0px;
+    padding: 0px;
+    
+  }
+  .grid-cell {
+    color: rgb(9, 9, 9);
+    text-align: center;
+    border: #000 solid 1px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .game-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+  }
+
+  .sudoku-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .toggle {
+    background-color: rgb(103, 158, 200);
+    text-align: center;
+    border: #000 solid 1px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .new-game-btn {
+    background-color: #0072e3;
+    width: 300px;
+    height:40px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .buttons-control {
+    display: flex;
+    width: 95%;
+    margin-left: 15px;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+
+  .undo-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(103, 198, 198);
+    cursor: pointer;
+  }
+
+  .erase-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(103, 198, 198);
+    cursor: pointer;
+  }
+
+  .notes-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(103, 198, 198);
+    cursor: pointer;
+  }
