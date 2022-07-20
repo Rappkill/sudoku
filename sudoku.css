@@ -19,8 +19,10 @@
     
   }
   .grid-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(9, 9, 9);
-    text-align: center;
     border: #000 solid 1px;
     width: 100%;
     height: 100%;
@@ -40,8 +42,20 @@
   }
 
   .toggle {
-    background-color: rgb(103, 158, 200);
-    text-align: center;
+    background-color: rgb(235, 240, 244);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #000 solid 1px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .toggle-heavy {
+    background-color: rgb(201, 209, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: #000 solid 1px;
     width: 100%;
     height: 100%;
@@ -85,4 +99,14 @@
     height: 50px;
     background-color: rgb(103, 198, 198);
     cursor: pointer;
+  }
+
+  .toggle-same {
+    background-color: rgb(193, 40, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #000 solid 1px;
+    width: 100%;
+    height: 100%;
   }
