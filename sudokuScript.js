@@ -91,40 +91,30 @@ Array(9)
   .fill(null)
   .map((_, index) => generateContainerWithCells(sudokuWrapper, index + 1));
 
-let historyIndex = 0;
 
 //Manipulate cells
-class sudokuCell {
-  constructor(className, innerHTML) {
-    this.className = className;
-    this.innerHTML = innerHTML;
-    this.value;
-    this.editable;
-    this.itemHistory = [];
-    this.history = {};
-  }
 
-  setState() {
-    this.value = this.innerHTML;
-    this.className = this.className;
-    if (this.innerHTML === " ") {
-      this.editable = true;
-    }
+class HistorySudoku{
+  constructor(){
+    this.historyList =[];
   }
-
-  setHistory() {
-    this.itemHistory.push(this.innerHTML);
-    this.history = `historyItems - ${historyIndex}`;
-  }
-
-  undo() {
-    return this.itemHistory.pop();
-  }
-
-  state() {
-    this.value;
-  }
+addHistory(cell,value){
+  this.historyList.push({
+      cell,
+      value
+  })
 }
+
+}
+
+const historySudoku = new HistorySudoku()
+
+
+// {
+//   value : 
+//   cell :  
+// }
+
 
 //Fill sudoku grids with numbers
 function generateSudokuNumbers() {
@@ -144,24 +134,103 @@ function generateSudokuNumbers() {
 }
 generateSudokuNumbers();
 
-const gridCells = document.querySelectorAll("div.grid-cell");
-console.log(gridCells);
 
-gridCells.forEach((cell) => cell.addEventListener("click", (e) => handleClickCell(e)));
+const gridCells = Array.from(document.querySelectorAll("div.grid-cell"));
 
-function handleClickCell(e) {
-  // adauga logica (apelezi alte functii)
-  console.log(e.target.className);
+gridCells.forEach((cell,index) => {
+  
+  cell.addEventListener("click", (e) => handleClickCell(e,index))
   
 }
 
+);
+
+function handleClickCell(e,index) {
+  const cell = e.target;
+  setId(cell,index);
+  highlightClass(cell);
+}
+
+function clearClass() {
+  gridCells.forEach((elem) => {
+    elem.classList.remove("toggle", "toggle-heavy");
+  });
+}
+
+function setId(cell,index) {
+  cell.setAttribute("id",index);
+  cell.setAttribute("type", "number")
+  if (cell.innerHTML === " ") {
+    cell.contentEditable = true;
+  }
+  // console.log(cell);
+}
+
+function highlightClass(cell) {
+  clearClass();
+
+  let container;
+  let row;
+  let column;
+
+  Array.from(cell.classList).forEach((cellClass) => {
+    if (cellClass.includes("container")) container = cellClass;
+    else if (cellClass.includes("row")) row = cellClass;
+    else if (cellClass.includes("column")) column = cellClass;
+  });
+
+
+  Array.from(document.getElementsByClassName(row)).forEach((elem) =>
+    elem.classList.add("toggle")
+  );
+  Array.from(document.getElementsByClassName(column)).forEach((elem) =>
+    elem.classList.add("toggle")
+  );
+  Array.from(document.getElementsByClassName(container)).forEach((elem) =>
+    elem.classList.add("toggle")
+  );
+
+  cell.classList.add("toggle-heavy");
+  // sudokuObjectCells[cell.id].className = cell.className;
+  // activityHistory;
+  // activityHistory = cell;
+}
+
 const sudokuObjectCells = [];
+
+
 gridCells.forEach((cell) =>
-  sudokuObjectCells.push(new sudokuCell(cell.className, cell.innerHTML))
+  cell.addEventListener("keypress", (e) => handleKeyPress(e))
 );
 
 
+function handleKeyPress(e){
+    if(acceptOnlyNumbers(e)){
+    assignCellValue(e)
+    
+  }
+}
 
+
+function acceptOnlyNumbers(e){
+  if (isNaN(String.fromCharCode(e.keyCode)) || e.key == "Enter" || e.key == '0') {
+    e.preventDefault()
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
+function assignCellValue(e){
+  e.preventDefault()
+  const cell = e.target;
+  cell.innerHTML = e.key;
+  
+historySudoku.addHistory(cell, cell.innerHTML)
+console.log(historySudoku.historyList)
+
+}
 // gridCells.forEach((cell, i) => {
 //   cell.setAttribute("id", i);
 //   if (cell.innerHTML === " ") {
@@ -217,19 +286,20 @@ gridCells.forEach((cell) =>
 //       //     elem.classList.add("toggle-heavy");
 //       //   }
 //       // });
-
 //       }
 //     });
 //   });
 // });
 
-let historyArray = [];
+// let historyArray = [];
 
-function saveHistory(cell) {
-  sudokuObjectCells[cell.id].setHistory();
-  historyArray.push(cell);
-  historyIndex++;
-}
+// function saveHistory(e) {
+//   sudokuObjectCells[cell.id].setHistory();
+//   historyArray.push(cell);
+//   historyIndex++;
+// }
+
+
 
 function undo() {
   if (historyArray.length != 0) {
@@ -243,8 +313,6 @@ function undo() {
 let activityHistory;
 
 function erase() {
-  if (gridCells[activityHistory].id) console.log(activityHistory);
-  console.log(sudokuObjectCells[activityHistory.id]);
 }
 
 function newGame() {
