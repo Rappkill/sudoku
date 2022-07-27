@@ -18,6 +18,7 @@ function createButton(parent, cssClass, text) {
 export function createSudokuElements() {
   const gameWrapper = createDivElement(main, "game-wrapper");
 
+  createDivElement(main, "timer");
   createDivElement(gameWrapper, "sudoku-wrapper");
   createDivElement(gameWrapper, "button-wrapper");
   const buttonWrapper = document.querySelector(".button-wrapper");
@@ -28,4 +29,9 @@ export function createSudokuElements() {
   createButton(buttonsControl, "undo-btn", "Undo");
   createButton(buttonsControl, "erase-btn", "Erase");
   createButton(buttonsControl, "notes-btn", "Notes");
+  
+  const numpadWrapper = createDivElement(buttonWrapper, "numpad-wrapper");
+  for (let i = 1; i <= 9; i++) {
+    createButton(numpadWrapper, "numpad-btn", i);
+  }
 }

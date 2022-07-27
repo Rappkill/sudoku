@@ -78,6 +78,10 @@ function handleErase() {
   console.log(erasedItem);
 }
 
+const newgameBtn = document.querySelector(".new-game-btn")
+
+console.log(newgameBtn)
+
 function newGame() {
   console.log("new game");
 }
@@ -85,3 +89,11 @@ function newGame() {
 function notes() {
   console.log("notes");
 }
+
+
+const numpadButtons = Array.from(document.querySelectorAll(".numpad-btn"));
+console.log(numpadButtons);
+
+// function addButtonEvent() {
+//   console.log(numpadButtons)
+// } addButtonEvent()
