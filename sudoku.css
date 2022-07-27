@@ -1,13 +1,7 @@
-/* body {
-  background-color: black;
-} */
-
-
 .main {
   width: auto;
   height: auto;
   display: grid;
-  grid-template-columns: 200rem;
 }
 
 .grid-container {
@@ -21,20 +15,20 @@
   padding: 0px;
 }
 .grid-cell {
-  width:100%;
+  width: 100%;
   justify-content: center;
   display: flex;
   justify-content: center;
-  height:100%;
-  background:#fff;
+  height: 100%;
+  background: #fff;
   font-size: 1.5rem;
-  font-family: 'Luminari';
+  font-family: "Luminari";
   align-items: center;
   border: solid black;
   border-color: rgba(108, 172, 176, 0.6);
-  float:left; 
+  float: left;
   border-width: 5px 3px 3px 5px;
-  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
   transform: rotate(-1.5deg);
 }
 
@@ -70,28 +64,6 @@
   height: 100%;
 }
 
-/* .new-game-btn {
-  background: #5E5DF0;
-  border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-} */
-
 .buttons-control {
   display: flex;
   width: 95%;
@@ -99,19 +71,6 @@
   margin-top: 40px;
   justify-content: space-between;
 }
-
-
-/* .numpad-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgb(64, 95, 188);
-  height: 100px;
-  font-size: 170%;
-  background-color: rgb(243, 245, 247);
-  cursor: pointer;
-} */
 
 .numpad-wrapper {
   display: grid;
@@ -132,20 +91,21 @@
   height: 100%;
 }
 
-
 .new-game-btn {
-  background-color: #3DD1E7;
-  border: 0 solid #E5E7EB;
+  background-color: #3dd1e7;
+  border: 0 solid #e5e7eb;
   box-sizing: border-box;
   color: #000000;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2em;
   font-weight: 700;
   justify-content: center;
   line-height: 1.75rem;
-  padding: .75rem 1.65rem;
-  margin-left: 2rem;;
+  padding: 0.75rem 1.65rem;
+  margin-left: 2rem;
   position: relative;
   text-align: center;
   text-decoration: none #000000 solid;
@@ -165,7 +125,7 @@
 }
 
 .new-game-btn:after {
-  content: '';
+  content: "";
   position: absolute;
   border: 1px solid #000000;
   bottom: 4px;
@@ -181,103 +141,97 @@
 
 @media (min-width: 768px) {
   .undo-btn {
-    padding: .75rem 3rem;
+    padding: 0.75rem 3rem;
     font-size: 1.25rem;
   }
 }
 
-
-
-
-.erase-btn  {
+.erase-btn {
   display: inline-block;
-outline: 0;
-border: 0;
-cursor: pointer;
-font-size: 1.5rem;
-text-decoration: none;
-line-height: 1;
-position: relative;
-padding: 10px;
-margin-left: 10px;
-background: #1abebf;
-background-image: linear-gradient(122deg,#37e0e0,#1abebe);
-background-size: 300px,300px,100%;
-color: #fff;
-border-bottom: 5px solid #ffc600;
-border-radius: 8px;
-box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
-text-shadow: 0 0 3px rgb(0 0 0 / 30%);
-transition: all .3s;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  padding: 10px;
+  margin-left: 10px;
+  background: #1abebf;
+  background-image: linear-gradient(122deg, #37e0e0, #1abebe);
+  background-size: 300px, 300px, 100%;
+  color: #fff;
+  border-bottom: 5px solid #ffc600;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
+  text-shadow: 0 0 3px rgb(0 0 0 / 30%);
+  transition: all 0.3s;
 }
 
-.erase-btn :hover{
-    box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
+.erase-btn :hover {
+  box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
 }
 
-.undo-btn  {
+.undo-btn {
   display: inline-block;
-outline: 0;
-border: 0;
-cursor: pointer;
-font-size: 1.5rem;
-text-decoration: none;
-line-height: 1;
-position: relative;
-padding: 10px;
-margin-left: 10px;
-background: #1abebf;
-background-image: linear-gradient(122deg,#37e0e0,#1abebe);
-background-size: 300px,300px,100%;
-color: #fff;
-border-bottom: 5px solid #ffc600;
-border-radius: 8px;
-box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
-text-shadow: 0 0 3px rgb(0 0 0 / 30%);
-transition: all .3s;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  padding: 10px;
+  margin-left: 10px;
+  background: #1abebf;
+  background-image: linear-gradient(122deg, #37e0e0, #1abebe);
+  background-size: 300px, 300px, 100%;
+  color: #fff;
+  border-bottom: 5px solid #ffc600;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
+  text-shadow: 0 0 3px rgb(0 0 0 / 30%);
+  transition: all 0.3s;
 }
 
-.undo-btn :hover{
-    box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
+.undo-btn :hover {
+  box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
 }
 
-
-.notes-btn  {
+.notes-btn {
   display: inline-block;
-outline: 0;
-border: 0;
-cursor: pointer;
-font-size: 1.5rem;
-text-decoration: none;
-line-height: 1;
-position: relative;
-padding: 10px;
-background: #1abebf;
-margin-left: 10px;
-background-image: linear-gradient(122deg,#37e0e0,#1abebe);
-background-size: 300px,300px,100%;
-color: #fff;
-border-bottom: 5px solid #ffc600;
-border-radius: 8px;
-box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
-text-shadow: 0 0 3px rgb(0 0 0 / 30%);
-transition: all .3s;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+  line-height: 1;
+  position: relative;
+  padding: 10px;
+  background: #1abebf;
+  margin-left: 10px;
+  background-image: linear-gradient(122deg, #37e0e0, #1abebe);
+  background-size: 300px, 300px, 100%;
+  color: #fff;
+  border-bottom: 5px solid #ffc600;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
+  text-shadow: 0 0 3px rgb(0 0 0 / 30%);
+  transition: all 0.3s;
 }
 
-.notes-btn :hover{
-    box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
+.notes-btn :hover {
+  box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
 }
-
-
 
 .numpad-btn {
   align-items: center;
-  background-image: linear-gradient(144deg,#8870a5, #61a7cf 50%,#00DDEB);
+  background-image: linear-gradient(144deg, #8870a5, #61a7cf 50%, #00ddeb);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 40px;
@@ -313,37 +267,64 @@ transition: all .3s;
   background: none;
 }
 
-/* @media (min-width: 768px) {
-  .numpad-btn {
-    font-size: 24px;
-    min-width: 196px;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .game-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-} */
+  .sudoku-wrapper {
+    grid-template-columns: 200px 200px 200px;
+  }
+  .numpad-wrapper {
+    grid-template-columns: 200px 200px 200px;
+  }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .new-game-btn {
+    margin-left: 4rem;
+  }
+  .buttons-control {
+    justify-content: space-around;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 700px) {
   .grid-container {
     width: 100px;
     height: 100px;
     margin: 4px;
-
   }
 
+  .grid-container {
+    margin-bottom: 10px;
+  }
+  .numpad-wrapper {
+    grid-template-columns: 100px 100px 100px;
+  }
   .numpad-btn {
-    width: 100px;
-    height: 100px;
-    font-size: 30px;
+    font-size: 1.5rem;
+    height: 3rem;
+    min-width: 100%;
+  }
+  .sudoku-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  .grid-cell {
+    font-size: 1rem;
+  }
+  .new-game-btn {
+    min-width: 100%;
   }
 }
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
