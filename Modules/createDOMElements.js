@@ -8,10 +8,13 @@ function createDivElement(parent, cssClass) {
   return div;
 }
 
-function createButton(parent, cssClass, text) {
+function createButton(parent, cssClass, text, value) {
   const button = document.createElement("button");
   button.className = cssClass;
   button.innerText = text;
+  if (value) {
+    button.value = value;
+  }
   parent.appendChild(button);
 }
 
@@ -29,9 +32,9 @@ export function createSudokuElements() {
   createButton(buttonsControl, "undo-btn", "Undo");
   createButton(buttonsControl, "erase-btn", "Erase");
   createButton(buttonsControl, "notes-btn", "Notes");
-  
+
   const numpadWrapper = createDivElement(buttonWrapper, "numpad-wrapper");
   for (let i = 1; i <= 9; i++) {
-    createButton(numpadWrapper, "numpad-btn", i);
+    createButton(numpadWrapper, "numpad-btn", i , Number(i));
   }
 }

@@ -24,10 +24,10 @@
   font-size: 1.5rem;
   font-family: "Luminari";
   align-items: center;
-  border: solid black;
+  border: solid;
   border-color: rgba(108, 172, 176, 0.6);
   float: left;
-  border-width: 5px 3px 3px 5px;
+  border-width: 2px 4px 5px 2px;
   border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
   transform: rotate(-1.5deg);
 }

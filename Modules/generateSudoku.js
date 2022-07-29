@@ -47,21 +47,22 @@ export function generate9X9() {
 }
 
 export function generateSudokuNumbers() {
-  let sudokuNumbers = sudoku.generate("medium").split("");
+  let sudokuNumbers = sudoku
+    .generate("medium")
+    .split("")
+    .map((elem) => (isNaN(Number(elem)) ? (elem = " ") : Number(elem)));
+
   for (let row = 1; row <= 9; row++) {
     let cells = Array.from(document.querySelectorAll(`.row-${row}`));
     let rowValues = sudokuNumbers.splice(0, 9);
 
     for (let i = 0; i < rowValues.length; i++) {
-      if (rowValues[i] === ".") {
-        rowValues[i] = " ";
-      }
       cells[i].innerHTML = rowValues[i];
     }
   }
 }
 
-function setTimer() {
-  const timer = document.querySelector(".timer")
-  console.log(timer)
-} setTimer(); 
+// function setTimer() {
+//   const timer = document.querySelector(".timer")
+//   console.log(timer)
+// } setTimer();

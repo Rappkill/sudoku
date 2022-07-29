@@ -1,34 +1,6 @@
 //Manipulate cells
 
-class SudokuHistory {
-  constructor() {
-    this.historyList = [];
-    this.eraseHistory = [];
-  }
 
-  addHistory(cell, value) {
-    this.historyList.push({
-      cell,
-      value,
-    });
-  }
-
-  addEraseHistory(cell) {
-    this.eraseHistory.push(cell);
-  }
-
-  undo() {
-    return this.historyList.pop();
-  }
-
-  erase() {
-    let eraseItem = this.eraseHistory.pop();
-    this.eraseHistory = [];
-    return eraseItem;
-  }
-}
-
-const historySudoku = new SudokuHistory();
 
 const sudokuObjectCells = [];
 
