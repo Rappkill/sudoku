@@ -81,15 +81,6 @@
   margin-left: 15px;
   margin-top: 30px;
 }
-.toggle-same {
-  background-color: rgb(193, 40, 23);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: #000 solid 1px;
-  width: 100%;
-  height: 100%;
-}
 
 .new-game-btn {
   background-color: #3dd1e7;
@@ -224,6 +215,10 @@
   box-shadow: 0 0 3px 3px rgb(0 0 0 / 8%);
 }
 
+.notes-btn.active {
+  color: rgb(250, 124, 6);
+}
+
 .numpad-btn {
   align-items: center;
   background-image: linear-gradient(144deg, #8870a5, #61a7cf 50%, #00ddeb);
@@ -328,3 +323,45 @@
     min-width: 100%;
   }
 }
+
+.wrong {
+  background-color: rgb(238, 175, 168);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #000 solid 1px;
+  width: 100%;
+  height: 100%;
+}
+
+.notes-class {
+  font-size: 10px;
+  margin: 0px;
+  padding: 0px;
+  visibility: hidden;
+  
+}
+/* .notes-class:active {
+  visibility: visible;
+} */
+
+/* .grid-cell {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+} */
+
+.notes-cell {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.notes-class.activ {
+  visibility: visible;
+}
+

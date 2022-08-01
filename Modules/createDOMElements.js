@@ -1,8 +1,12 @@
 const main = document.querySelector(".main");
 
-function createDivElement(parent, cssClass) {
+export function createDivElement(parent, cssClass, text) {
   const div = document.createElement("div");
   div.className = cssClass;
+  if (text != undefined) {
+    div.innerHTML = text;
+    div.setAttribute("id", text);
+  }
   parent.appendChild(div);
 
   return div;
@@ -35,6 +39,6 @@ export function createSudokuElements() {
 
   const numpadWrapper = createDivElement(buttonWrapper, "numpad-wrapper");
   for (let i = 1; i <= 9; i++) {
-    createButton(numpadWrapper, "numpad-btn", i , Number(i));
+    createButton(numpadWrapper, "numpad-btn", i, Number(i));
   }
 }
