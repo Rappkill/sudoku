@@ -1,3 +1,5 @@
+import { generalValidation } from "./validateNums.js";
+
 class SudokuHistory {
   constructor() {
     this.historyList = [];
@@ -23,4 +25,5 @@ export const sudokuObject = new SudokuHistory();
 
 export function handleUndo() {
   sudokuObject.undo();
+  generalValidation();
 }

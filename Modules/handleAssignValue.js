@@ -1,5 +1,6 @@
 import { sudokuObject } from "./handleHistory.js";
 import { makeNotesOnGrid } from "./handleNotes.js";
+import { generalValidation } from "./validateNums.js";
 
 export function handleClickNumpad(e) {
   const value = e.target.value;
@@ -33,7 +34,7 @@ export function handleErase() {
   if (cell != undefined && cell.contentEditable == "true") {
     sudokuObject.addHistory(cell, cell.innerHTML);
     cell.innerHTML = " ";
-    // validate numbers
+    generalValidation();
   }
 }
 
@@ -49,9 +50,8 @@ function handleAssignValue(value) {
     selectedCell.classList.remove("notes-cell");
     selectedCell.innerHTML = value;
     highlightSameNumbers(value, selectedCell);
+    generalValidation();
   }
-  //   highlightSameNumbers
-  //  validateNumbers
 }
 
 export function highlightSameNumbers(value, selectedCell) {
