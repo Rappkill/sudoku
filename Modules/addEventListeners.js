@@ -1,5 +1,4 @@
-import { generateSudokuNumbers } from "./generateSudoku.js";
-import { createDivElement } from "./createDOMElements.js";
+import { generateSudokuNumbers, generate9X9 } from "./generateSudoku.js";
 import { handleClickCell } from "./handleClickCell.js";
 import {
   handleClickNumpad,
@@ -8,11 +7,12 @@ import {
 } from "./handleAssignValue.js";
 import { handleUndo } from "./handleHistory.js";
 import { handleNotes } from "./handleNotes.js";
+import { setTimer } from "./timer.js";
 
 export function addEventListeners() {
   const gridCells = Array.from(document.querySelectorAll(".grid-cell"));
 
-  gridCells.forEach((cell, index) => cell.setAttribute("id", index + 1));
+  gridCells.forEach((cell, index) => cell.setAttribute("id", index ));
 
   gridCells.forEach((cell) => {
     cell.addEventListener("click", (e) => handleClickCell(e, gridCells));
@@ -40,5 +40,12 @@ export function addEventListeners() {
 }
 
 function handleNewGame() {
+  const gridContainer = document.querySelectorAll(".grid-container");
+  console.log(gridContainer);
+  gridContainer.forEach((elem) => elem.remove());
+
+  generate9X9();
   generateSudokuNumbers();
+  setTimer();
+  addEventListeners();
 }

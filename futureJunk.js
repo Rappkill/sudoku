@@ -66,3 +66,104 @@ function validateNums(cell) {
   //     }
   // }
 }
+
+
+
+function validateNums(e, gridCells) {
+  
+  gridCells.forEach((cell) => {
+    let validateCell = validateClass(cell);
+    const { container, row, column } = validateCell;
+
+    let containerArray = Array.from(
+      document.getElementsByClassName(`${container}`)
+    );
+    let rowArray = Array.from(document.getElementsByClassName(`${row}`));
+    let columnArray = Array.from(document.getElementsByClassName(`${column}`));
+    let cellClassArray = [...containerArray, ...rowArray, ...columnArray];
+    console.log(cellClassArray)
+    cellClassArray.forEach((cell1) => {
+      cellClassArray.forEach((cell2) => {
+        if (cell1.id !== cell2.id) {
+          if (cell1.innerHTML === cell2.innerHTML) {
+            cell1.classList.add("wrong");
+          }
+        }
+      });
+    });
+  });
+  //   const selectedCell = document.querySelector(".toggle-heavy");
+  // if(arrayOfSelectedCells.length == 0 ){
+  //   arrayOfSelectedCells.push(e.target)
+  // }
+  //   // console.log(selectedCell)
+  // arrayOfSelectedCells.forEach(cell => {
+  //   console.log(cell.id)
+  //   if((e.target.id != cell.id )){
+  //     arrayOfSelectedCells.push(e.target)
+  //   }
+  // })
+  // console.log(arrayOfSelectedCells)
+  // let cellClassList = validateClass(selectedCell);
+  // const { container, row, column } = cellClassList;
+  // let containerArray = Array.from(
+  //   document.getElementsByClassName(`${container}`)
+  // );
+  // let rowArray = Array.from(document.getElementsByClassName(`${row}`));
+  // let columnArray = Array.from(document.getElementsByClassName(`${column}`));
+  // let cellClassArray = [...containerArray, ...rowArray, ...columnArray].filter(
+  //   (cell) => {
+  //     return cell.id != selectedCell.id;
+  //   }
+  // );
+  // console.log(selectedCell.id)
+  // let newArray = cellClassArray.
+  // console.log(cellClassArray);
+  //   cellClassArray.forEach(cell =>{
+  //     cellClassArray.forEach(cell2 =>{
+  //       if((cell.id != cell2.id) && (cell.innerHTML == cell2.innerHTML)){
+  //           cell2.classList.add("wrong")
+  //       }
+  //     })
+  //   })
+  // const checkClass = document.querySelectorAll(".toggle:not(.toggle-heavy)");
+  // console.log(checkClass);
+  // checkClass.forEach((cell) => {
+  //   if (cell.innerHTML == selectedCell.innerHTML) {
+  //     selectedCell.classList.add("wrong");
+  //     cell.classList.add("wrong");
+  //   } else {
+  //     cell.classList.remove("wrong");
+  //   }
+  // });
+  // const wrongClass = document.querySelectorAll(".wrong");
+  // console.log(wrongClass);
+  //       let arrayOfCells = Array.from(document.querySelectorAll(`container`))
+  // console.log(arrayOfCells)
+  //   }}))
+  //   gridCells.forEach((firstCell) => {
+  //     gridCells.forEach((secondCell) => {
+  //       if (firstCell.id != secondCell.id) {
+  //         checkWrongNumbers(firstCell, secondCell);
+  //       }
+  //     });
+  //   });
+  //   let wrongClass = Array.from(document.querySelectorAll(".wrong"));
+  //   checkWrongClass(wrongClass);
+  // }
+  // function checkWrongNumbers(firstCell, secondCell) {
+  //   const firstCellClasslist = validateClass(firstCell);
+  //   const secondCellClasslist = validateClass(secondCell);
+  //   if (
+  //     (firstCellClasslist.container == secondCellClasslist.container) &&
+  //       // firstCellClasslist.column == secondCellClasslist.column ||
+  //       // firstCellClasslist.row == secondCellClasslist.row) &&
+  //     firstCell.innerHTML != " " &&
+  //     secondCell.innerHTML != " "
+  //   ) {
+  //     if (firstCell.innerHTML == secondCell.innerHTML) {
+  //       firstCell.classList.add("wrong");
+  //       secondCell.classList.add("wrong");
+  //     }
+  //   }
+}

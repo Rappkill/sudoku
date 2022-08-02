@@ -29,7 +29,7 @@ function clearClass(gridCells) {
   });
 }
 
-function validateClass(element) {
+export function validateClass(element) {
   let container;
   let row;
   let column;
@@ -42,3 +42,5 @@ function validateClass(element) {
 
   return { container, row, column };
 }
+
+

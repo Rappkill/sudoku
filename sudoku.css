@@ -32,6 +32,10 @@
   transform: rotate(-1.5deg);
 }
 
+.grid-cell[contenteditable="true"] {
+  color: blue;
+}
+
 .game-wrapper {
   position: relative;
   display: flex;
@@ -324,6 +328,10 @@
   }
 }
 
+.same {
+  background-color: rgb(101, 185, 213);
+}
+
 .wrong {
   background-color: rgb(238, 175, 168);
   /* display: flex;
@@ -334,9 +342,7 @@
   height: 100%; */
 }
 
-.same {
-  background-color: rgb(101, 185, 213);
-}
+
 
 .notes-class {
   font-size: 0.8rem;
@@ -366,6 +372,14 @@
 
 .notes-class.visible {
   visibility: visible;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   user-select: none;
   pointer-events: none;
+}
+
+.timer {
+  color: #ffc600;
+  font-size: 3rem;
 }

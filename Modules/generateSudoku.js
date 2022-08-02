@@ -66,7 +66,3 @@ export function generateSudokuNumbers() {
   }
 }
 
-// function setTimer() {
-//   const timer = document.querySelector(".timer")
-//   console.log(timer)
-// } setTimer();
