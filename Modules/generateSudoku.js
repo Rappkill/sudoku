@@ -58,6 +58,10 @@ export function generateSudokuNumbers() {
 
     for (let i = 0; i < rowValues.length; i++) {
       cells[i].innerHTML = rowValues[i];
+
+      if (rowValues[i] === " ") {
+        cells[i].contentEditable = true;
+      }
     }
   }
 }

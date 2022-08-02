@@ -326,20 +326,23 @@
 
 .wrong {
   background-color: rgb(238, 175, 168);
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   border: #000 solid 1px;
   width: 100%;
-  height: 100%;
+  height: 100%; */
+}
+
+.same {
+  background-color: rgb(101, 185, 213);
 }
 
 .notes-class {
-  font-size: 10px;
+  font-size: 0.8rem;
   margin: 0px;
   padding: 0px;
   visibility: hidden;
-  
 }
 /* .notes-class:active {
   visibility: visible;
@@ -361,7 +364,8 @@
   justify-content: center;
 }
 
-.notes-class.activ {
+.notes-class.visible {
   visibility: visible;
+  user-select: none;
+  pointer-events: none;
 }
-
