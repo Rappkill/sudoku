@@ -1,18 +1,19 @@
-import { generateSudokuNumbers, generate9X9 } from "./generateSudoku.js";
-import { handleClickCell } from "./handleClickCell.js";
 import {
-  handleClickNumpad,
+  handleClickCell,
   handleKeyPress,
+  handleClickNumpad,
+  handleUndo,
   handleErase,
-} from "./handleAssignValue.js";
-import { handleUndo } from "./handleHistory.js";
-import { handleNotes } from "./handleNotes.js";
-import { setTimer } from "./timer.js";
+  handleNewGame,
+  handleNotes,
+  handleTimerPlay,
+  handleTimerPause,
+} from "./features.js";
 
-export function addEventListeners() {
+export function performAction() {
   const gridCells = Array.from(document.querySelectorAll(".grid-cell"));
 
-  gridCells.forEach((cell, index) => cell.setAttribute("id", index ));
+  gridCells.forEach((cell, index) => cell.setAttribute("id", index));
 
   gridCells.forEach((cell) => {
     cell.addEventListener("click", (e) => handleClickCell(e, gridCells));
@@ -37,15 +38,12 @@ export function addEventListeners() {
   document
     .querySelector(".notes-btn")
     .addEventListener("click", (e) => handleNotes(e));
-}
 
-function handleNewGame() {
-  const gridContainer = document.querySelectorAll(".grid-container");
-  console.log(gridContainer);
-  gridContainer.forEach((elem) => elem.remove());
+  document
+    .querySelector(".pause-btn")
+    .addEventListener("click", handleTimerPause);
 
-  generate9X9();
-  generateSudokuNumbers();
-  setTimer();
-  addEventListeners();
+  document
+    .querySelector(".play-btn")
+    .addEventListener("click", handleTimerPlay);
 }
