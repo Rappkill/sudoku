@@ -14,6 +14,7 @@
   margin: 7px;
   padding: 0px;
 }
+
 .grid-cell {
   width: 100%;
   justify-content: center;
@@ -34,6 +35,10 @@
 
 .grid-cell[contenteditable="true"] {
   color: blue;
+}
+
+.grid-cell.hidden {
+  color: transparent;
 }
 
 .game-wrapper {
@@ -334,15 +339,7 @@
 
 .wrong {
   background-color: rgb(238, 175, 168);
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  border: #000 solid 1px;
-  width: 100%;
-  height: 100%; */
 }
-
-
 
 .notes-class {
   font-size: 0.8rem;
@@ -350,17 +347,6 @@
   padding: 0px;
   visibility: hidden;
 }
-/* .notes-class:active {
-  visibility: visible;
-} */
-
-/* .grid-cell {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-  align-items: center;
-  justify-content: center;
-} */
 
 .notes-cell {
   display: grid;
@@ -381,5 +367,5 @@
 
 .timer {
   color: #ffc600;
-  font-size: 3rem;
+  font-size: 2rem;
 }
