@@ -167,3 +167,6 @@ function validateNums(e, gridCells) {
   //     }
   //   }
 }
+
+//notes
+//pause & play

@@ -48,9 +48,15 @@ export function handleErase() {
 export function handleNewGame() {
   const gridContainer = document.querySelectorAll(".grid-container");
   gridContainer.forEach((elem) => elem.remove());
+  document
+  .querySelector(".notes-btn")
+  .removeEventListener("click", handleNotes);
+
 
   generateSudoku();
   performAction();
+  totalSeconds = -1;
+  handleTimerPlay()
   //   setTimer();
 }
 
@@ -90,6 +96,7 @@ export function handleNotes(e) {
   const notesButton = e.target;
 
   buttonNoteState(notesButton);
+  
 }
 
 function buttonNoteState(notesButton) {
@@ -128,19 +135,20 @@ function makeNotesOnGrid(value) {
 }
 
 //timer
-export function handleTimerPlay() {
-  let secondsLabel = document.querySelector(".seconds");
-  let minutesLabel = document.querySelector(".minutes");
-  document.querySelectorAll(".grid-cell").forEach(elem => elem.classList.remove("hidden"))
-  interval = setInterval(function () {
-    setTime(secondsLabel, minutesLabel);
-  }, 1000);
+export function handleTimerPlay(e) {
+  isPaused = false;
+  // e.preventDefault();
+
+  document
+    .querySelectorAll(".grid-cell")
+    .forEach((elem) => elem.classList.remove("hidden"));
 }
-
-export function handleTimerPause() {
-  document.querySelectorAll(".grid-cell").forEach(elem => elem.classList.add("hidden"))
-  clearInterval(interval);
-
+export function handleTimerPause(e) {
+  isPaused = true;
+  e.preventDefault();
+  document
+    .querySelectorAll(".grid-cell")
+    .forEach((elem) => elem.classList.add("hidden"));
 }
 
 function setTimeValue(totalSeconds) {
@@ -152,10 +160,17 @@ function setTimeValue(totalSeconds) {
 }
 
 let totalSeconds = 0;
-let interval;
+let isPaused = false;
 
+setInterval(function () {
+  if (!isPaused) {
+    setTime();
+  }
+}, 1000);
 
-function setTime(secondsLabel, minutesLabel) {
+function setTime() {
+  let secondsLabel = document.querySelector(".seconds");
+  let minutesLabel = document.querySelector(".minutes");
   totalSeconds++;
   secondsLabel.innerHTML = setTimeValue(totalSeconds % 60);
   minutesLabel.innerHTML = setTimeValue(Math.floor(totalSeconds / 60));

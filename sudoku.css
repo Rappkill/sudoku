@@ -366,6 +366,49 @@
 }
 
 .timer {
-  color: #ffc600;
-  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  row-gap: 10px;
+  color: #b48d26;
+  font-size: 1.5em;
+}
+
+.play-btn {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  /* border-width:  10px 0 10px 15px; */
+  border-width: 12px 0 11px 17px;
+  border-color: transparent transparent transparent #ffd500;
+  width: 0;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+}
+.play-btn:after {
+  content: " ";
+  position: absolute;
+  border-style: solid;
+  border-width: 8px 0 7px 15px;
+  border-color: transparent transparent transparent #4cb518;
+  width: 0;
+  top: -6px;
+  left: -14px;
+}
+
+.pause-btn {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 22px;
+  margin-left: 1rem;
+  border-style: solid;
+  border-style: double;
+  border-width: 0px 0px 0px 15px;
+  border-color: #202020;
+  cursor: pointer;
+  background-color: transparent;
 }
