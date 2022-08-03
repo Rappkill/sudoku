@@ -20,8 +20,8 @@ export function createInterface() {
   createLabel(timer, "minutes", "00");
   createSpan(timer, "span", ":");
   createLabel(timer, "seconds", "00");
-  createButton(timer, "pause-btn", "||");
-  createButton(timer, "play-btn", ">");
+  createButton(timer, "pause-btn", "");
+  createButton(timer, "play-btn",'');
 
   const numpadWrapper = createDivElement(buttonWrapper, "numpad-wrapper");
   for (let i = 1; i <= 9; i++) {

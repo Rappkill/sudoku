@@ -41,9 +41,9 @@ export function performAction() {
 
   document
     .querySelector(".pause-btn")
-    .addEventListener("click", handleTimerPause);
+    .addEventListener("click", (e) => handleTimerPause(e));
 
   document
     .querySelector(".play-btn")
-    .addEventListener("click", handleTimerPlay);
+    .addEventListener("click", (e) => handleTimerPlay(e));
 }
