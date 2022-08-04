@@ -67,6 +67,17 @@ function validateNums(cell) {
   // }
 }
 
+let cell = sudokuObject.undo();
+  if (cell != undefined) {
+    let validateCell = validateClass(cell.cell);
+    console.log(validateCell);
+    let selectedCell = Array.from(document.getElementsByClassName(`${validateCell.container} ${validateCell.row} ${validateCell.column}`))
+    console.log(selectedCell[0])
+    if(selectedCell[0].className.includes("notes-cell")){
+        selectedCell[0].classList.remove("notes-cell")
+        selectedCell[0].classList.add("notes-cell")
+    }
+  }
 
 
 function validateNums(e, gridCells) {
@@ -170,3 +181,11 @@ function validateNums(e, gridCells) {
 
 //notes
 //pause & play
+
+
+
+// scr - 2 folder : 
+// 1 components buttons/ inputs / sudoku / 
+// 2 folder services /timer /validation /
+// 
+//

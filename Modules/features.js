@@ -5,8 +5,13 @@ import {
   highlightSameNumbers,
   generalValidation,
   acceptOnlyNumbers,
+  validateClass,
 } from "./validation.js";
-import { generateSudoku, createDivElement } from "./builtInterface.js";
+import {
+  generateSudoku,
+  createDivElement,
+  generateSudokuNumbers,
+} from "./builtInterface.js";
 import { performAction } from "./performActions.js";
 
 //highlight click
@@ -44,20 +49,26 @@ export function handleErase() {
   }
 }
 
+function clearGrid() {
+  document.querySelectorAll(".grid-cell[contenteditable]").forEach((elem) => {
+    elem.removeAttribute("contenteditable");
+  });
+  document.querySelectorAll(".grid-cell").forEach((elem) => {
+    elem.classList.remove("notes-cell");
+  });
+
+  if (document.querySelector(".notes-btn").className.includes("active")) {
+    document.querySelector(".notes-btn").classList.remove("active");
+  }
+}
 //newGame
 export function handleNewGame() {
-  const gridContainer = document.querySelectorAll(".grid-container");
-  gridContainer.forEach((elem) => elem.remove());
-  document
-  .querySelector(".notes-btn")
-  .removeEventListener("click", handleNotes);
+  clearGrid();
 
+  generateSudokuNumbers();
 
-  generateSudoku();
-  performAction();
   totalSeconds = -1;
-  handleTimerPlay()
-  //   setTimer();
+  handleTimerPlay();
 }
 
 //undo
@@ -96,7 +107,6 @@ export function handleNotes(e) {
   const notesButton = e.target;
 
   buttonNoteState(notesButton);
-  
 }
 
 function buttonNoteState(notesButton) {
@@ -138,6 +148,8 @@ function makeNotesOnGrid(value) {
 export function handleTimerPlay(e) {
   isPaused = false;
   // e.preventDefault();
+  document.querySelector(".play-btn").classList.add("inactive");
+  document.querySelector(".pause-btn").classList.remove("inactive");
 
   document
     .querySelectorAll(".grid-cell")
@@ -145,6 +157,8 @@ export function handleTimerPlay(e) {
 }
 export function handleTimerPause(e) {
   isPaused = true;
+  document.querySelector(".pause-btn").classList.add("inactive");
+  document.querySelector(".play-btn").classList.remove("inactive");
   e.preventDefault();
   document
     .querySelectorAll(".grid-cell")
