@@ -94,7 +94,7 @@ function checkWrongNumbers(cell, gridCells) {
 }
 
 //class checking
-function validateClass(element) {
+export function validateClass(element) {
   let container;
   let row;
   let column;

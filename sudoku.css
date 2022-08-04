@@ -412,3 +412,11 @@
   cursor: pointer;
   background-color: transparent;
 }
+
+.play-btn.inactive {
+  visibility: hidden;
+}
+
+.pause-btn.inactive {
+  visibility: hidden;
+}

@@ -20,8 +20,8 @@ export function createInterface() {
   createLabel(timer, "minutes", "00");
   createSpan(timer, "span", ":");
   createLabel(timer, "seconds", "00");
-  createButton(timer, "pause-btn", "");
-  createButton(timer, "play-btn",'');
+  createButton(timer, "pause-btn ", "");
+  createButton(timer, "play-btn inactive",'');
 
   const numpadWrapper = createDivElement(buttonWrapper, "numpad-wrapper");
   for (let i = 1; i <= 9; i++) {
@@ -59,7 +59,7 @@ function generate9x9() {
     .map((_, index) => generateContainerWithCells(sudokuWrapper, index + 1));
 }
 
-function generateSudokuNumbers() {
+export function generateSudokuNumbers() {
   let sudokuNumbers = sudoku
     .generate("medium")
     .split("")
